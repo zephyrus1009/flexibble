@@ -1,3 +1,6 @@
+//Navbar sẽ gồm 2 phần:
+// phần 1: chứa các links nói chung
+// phần 2: tuỳ vào user đã login chưa mà hiện khác nhau
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,6 +16,7 @@ const Navbar = async () => {
 
   return (
     <nav className='flexBetween navbar'>
+      {/* phần 1 chứa các links */}
       <div className='flex-1 flexStart gap-10'>
         <Link href='/'>
           <Image
@@ -31,7 +35,7 @@ const Navbar = async () => {
         </ul>
         {/* NavLink được tạo dưới dạng một array các object nên ta có thể map ra để ul như trên. */}
       </div>
-
+{/* phần 2 nếu user đã đăng nhập thì hiện các nút, info liên quan đên user */}
       <div className='flexCenter gap-4'>
         {session?.user ? (
           <>
@@ -43,6 +47,7 @@ const Navbar = async () => {
           </>
         ) : (
           <AuthProviders />
+          // nếu user chưa đăng nhập thì hiện AuthProviders là component được tạo chứa các option hỗ trợ đăng nhập
         )}
       </div>
     </nav>

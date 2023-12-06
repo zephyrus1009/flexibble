@@ -1,3 +1,5 @@
+//file này tạo các hàm (các action, hành động) có thể giữa user, system với database như upload ảnh, tạo project hay lấy thông tin về các project,... 
+
 import { GraphQLClient } from "graphql-request";
 
 import { createProjectMutation, createUserMutation, deleteProjectMutation, updateProjectMutation, getProjectByIdQuery, getProjectsOfUserQuery, getUserQuery, projectsQuery } from "@/graphql";
